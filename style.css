@@ -1,0 +1,210 @@
+/* Estilos Globais */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Cabeçalho com transições */
+header {
+    background-color: #004c8c;
+    color: white;
+    padding: 20px;
+    text-align: right; /* Alinha o texto à direita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+    top: 0;
+    right: 0; /* Alinha o cabeçalho à direita */
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo do cabeçalho à direita */
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out, color 0.5s;
+}
+
+/* Estado minimizado do cabeçalho */
+header.minimized {
+    background-color: transparent; /* Remove o fundo azul */
+    padding: 10px;
+    position: fixed;
+    left: 10px; /* Move para o canto superior esquerdo */
+    top: 10px;
+    width: auto;
+}
+
+header.minimized h1 {
+    font-size: 1.5em; /* Diminui o tamanho do texto */
+    transform: translateX(-50px); /* Move o texto para a esquerda */
+    color: #004c8c; /* Muda a cor do texto */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #003366;
+    display: flex;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0055a5;
+    border-radius: 4px;
+    transform: scale(1.1);
+}
+
+.banner {
+    background-color: #004c8c;
+    color: #ffffff;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.banner h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    animation: slideDown 1.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.banner button {
+    background-color: #0055a5;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+.banner button:hover {
+    background-color: #003366;
+    transform: translateY(-5px);
+}
+
+/* Restante dos estilos */
+.container {
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container h2 {
+    color: #004c8c;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.services, .about {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.services div, .about div {
+    background-color: white;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.services div:hover, .about div:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: text-decoration 0.3s, transform 0.3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+button {
+    font-size: 1.2em;
+    padding: 12px 25px;
+    background-color: #004c8c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+}
