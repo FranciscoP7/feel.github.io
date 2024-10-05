@@ -10,25 +10,44 @@ body {
 
 /* Cabeçalho com transições */
 header {
-    background-color: #004c8c;
+    background-color: #0097b2;
     color: white;
     padding: 20px;
-    text-align: right; /* Alinha o texto à direita */
+    text-align: center; /* Alinha o texto à direita */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
-    top: 0;
-    right: 0; /* Alinha o cabeçalho à direita */
+    /* position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+    top: 0; 
     z-index: 100;
     transition: all 0.5s ease-in-out;
     display: flex;
-    justify-content: flex-end; /* Alinha o conteúdo do cabeçalho à direita */
+    justify-content: center; /* Alinha o conteúdo do cabeçalho à direita */
     align-items: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.texto-container {
+    flex-shrink: 0; /* Garante que o tamanho da logo não afete o layout */
+}
+
+/* Estilos da logo (espaço reservado) */
+.texto {
+    width: 200px; /* Tamanho da logo (ajuste conforme necessário) */
+    height: auto;
+    margin: 0;
+    transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out, color 0.5s;
+    animation: fadeIn 2.54s ease-in;
+    flex-direction: column
 }
 
 header h1 {
     font-size: 2.5em;
     margin: 0;
     transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out, color 0.5s;
+    animation: fadeIn 2.54s ease-in;
+    flex-direction: column
+    
 }
 
 /* Estado minimizado do cabeçalho */
@@ -39,47 +58,60 @@ header.minimized {
     left: 10px; /* Move para o canto superior esquerdo */
     top: 10px;
     width: auto;
+    animation: fadeIn 2s ease-in-out;
+    
 }
 
 header.minimized h1 {
     font-size: 1.5em; /* Diminui o tamanho do texto */
     transform: translateX(-50px); /* Move o texto para a esquerda */
     color: #004c8c; /* Muda a cor do texto */
+    flex-direction: column
+    
+}
+
+
+nav {
+    flex-grow: 1; /* Faz o nav ocupar o máximo de espaço possível */
 }
 
 nav ul {
+    font-weight: 1;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #003366;
     display: flex;
-    justify-content: center;
-    opacity: 0.9;
+    justify-content: center; /* Centraliza os itens dentro da lista */
+    gap: 1px; /* Espaçamento entre os itens */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
     display: block;
-    padding: 14px 20px;
+    padding: 16px 30px;
     text-decoration: none;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.3em;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #0055a5;
-    border-radius: 4px;
+    border-radius: 6px;
     transform: scale(1.1);
 }
 
 .banner {
-    background-color: #004c8c;
+    background-image: url('imagens/unnamed.jpg');
+    background-size: cover; /* Para garantir que a imagem cubra todo o banner */
+    background-position: center 90%; /* Para centralizar a imagem no banner */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    height: 60vh; /* Mantém o mesmo tamanho que tinha antes */
     color: #ffffff;
-    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +127,8 @@ nav ul li a:hover {
 }
 
 .banner h1 {
+    color:#0097b2;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.7);
     font-size: 3.5em;
     margin-bottom: 20px;
     animation: slideDown 1.5s ease-in-out;
@@ -163,7 +197,44 @@ nav ul li a:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     opacity: 0.9;
 }
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
+.service-item {
+    background-color: white;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    border-radius: 8px;
+    border: 2px solid transparent; /* Borda invisível inicial */
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s, border 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+    border: 2px solid #004c8c; /* Aumenta a borda ao passar o mouse */
+}
+
+.service-item img.service-image {
+    width: 100%;
+    height: auto;
+    display: none; /* Esconde a imagem inicialmente */
+    margin-top: 15px;
+}
+
+.service-item:hover img.service-image {
+    display: block; /* Mostra a imagem ao passar o mouse */
+}
+.service-image{
+    border-radius: 50px;
+}
 footer {
     background-color: #003366;
     color: white;
@@ -192,7 +263,12 @@ footer a:hover {
     text-decoration: underline;
     transform: scale(1.1);
 }
-
+.whats{
+    width: 30px;
+}
+.inst{
+    width: 31px;
+}
 button {
     font-size: 1.2em;
     padding: 12px 25px;
