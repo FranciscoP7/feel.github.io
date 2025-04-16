@@ -1,4 +1,4 @@
-# 🦈 Shark Tank-Inspired Business Website – Projeto em Grupo (2024)
+# Feel – Técnologia e Estratégia (2024)
 
 Este site foi desenvolvido em grupo durante o ano de **2024** como parte do projeto da disciplina de **Tecnologia e Estratégia** no colégio.  
 A proposta era criar uma **empresa fictícia**, inspirada no formato do programa **Shark Tank**, apresentando ideias inovadoras por meio de um site profissional, como se estivéssemos buscando investimento para o nosso projeto.
